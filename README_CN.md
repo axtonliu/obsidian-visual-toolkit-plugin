@@ -53,7 +53,7 @@
 
 ```bash
 codex plugin marketplace add axtonliu/obsidian-visual-toolkit-plugin --ref main
-codex plugin add obsidian-visual-toolkit --marketplace obsidian-visual-toolkit-dev
+codex plugin add obsidian-visual-toolkit --marketplace obsidian-visual-toolkit-marketplace
 ```
 
 也可以在 ChatGPT 桌面版中完成安装。请在新任务中测试，确保加载的是最终 package。

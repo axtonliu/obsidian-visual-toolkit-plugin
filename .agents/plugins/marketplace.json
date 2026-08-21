@@ -1,7 +1,7 @@
 {
-  "name": "obsidian-visual-toolkit-dev",
+  "name": "obsidian-visual-toolkit-marketplace",
   "interface": {
-    "displayName": "Obsidian Visual Toolkit Development"
+    "displayName": "Obsidian Visual Toolkit"
   },
   "plugins": [
     {

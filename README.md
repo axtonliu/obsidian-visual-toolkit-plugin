@@ -59,7 +59,7 @@ After this repository is published, add it as a marketplace source:
 
 ```bash
 codex plugin marketplace add axtonliu/obsidian-visual-toolkit-plugin --ref main
-codex plugin add obsidian-visual-toolkit --marketplace obsidian-visual-toolkit-dev
+codex plugin add obsidian-visual-toolkit --marketplace obsidian-visual-toolkit-marketplace
 ```
 
 You can also install it from the ChatGPT desktop app. Test the installed plugin in a new task so the final package is loaded cleanly.
