@@ -1,0 +1,20 @@
+{
+  "name": "obsidian-visual-toolkit-dev",
+  "interface": {
+    "displayName": "Obsidian Visual Toolkit Development"
+  },
+  "plugins": [
+    {
+      "name": "obsidian-visual-toolkit",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

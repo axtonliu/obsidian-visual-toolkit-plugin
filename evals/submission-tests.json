@@ -1,0 +1,61 @@
+{
+  "plugin": "obsidian-visual-toolkit",
+  "version": "0.1.0",
+  "positive_tests": [
+    {
+      "id": "positive-mermaid-process",
+      "prompt": "Turn this release process into a horizontal Mermaid flowchart: plan, implement, review, deploy, monitor, and return to implementation when monitoring finds a regression.",
+      "expected_behavior": "Use mermaid-visualizer, choose a left-to-right process flow, represent the feedback loop, and follow safe Mermaid syntax.",
+      "expected_result_shape": "A fenced mermaid block with defined nodes, labeled connections, explicit LR direction, and no unsupported ordered-list syntax.",
+      "fixture_data": "None"
+    },
+    {
+      "id": "positive-mermaid-sequence",
+      "prompt": "Create a Mermaid sequence diagram showing a user signing in through a web app, auth service, and database, including the invalid-password response.",
+      "expected_behavior": "Use mermaid-visualizer and select a sequence diagram because the request describes time-ordered messages between actors.",
+      "expected_result_shape": "A fenced mermaid sequenceDiagram block containing the three actors, the success path, and the invalid-password alternative.",
+      "fixture_data": "None"
+    },
+    {
+      "id": "positive-excalidraw-standard",
+      "prompt": "Create a standard Excalidraw architecture diagram for a client, API gateway, application service, queue, worker, and database. Return an editable .excalidraw artifact.",
+      "expected_behavior": "Use excalidraw-diagram in Standard mode, create valid Excalidraw JSON, and avoid Obsidian-specific wrapping.",
+      "expected_result_shape": "A valid JSON object with type=excalidraw, version=2, source=https://excalidraw.com, elements, appState, and files, returned or saved as an .excalidraw artifact.",
+      "fixture_data": "None"
+    },
+    {
+      "id": "positive-excalidraw-obsidian",
+      "prompt": "Make an Obsidian Excalidraw mind map about the three stages of a research project: collect, evaluate, and synthesize.",
+      "expected_behavior": "Use excalidraw-diagram in Obsidian mode and create the required Obsidian Excalidraw Markdown wrapper around valid drawing JSON.",
+      "expected_result_shape": "A Markdown artifact with excalidraw-plugin frontmatter, the required Excalidraw Data sections, and embedded JSON drawing data.",
+      "fixture_data": "None"
+    },
+    {
+      "id": "positive-obsidian-canvas",
+      "prompt": "Organize these product notes as an Obsidian Canvas mind map: center=Launch Plan; branches=Audience, Message, Channels; Audience has Existing Users and New Users; Channels has Newsletter and YouTube.",
+      "expected_behavior": "Use obsidian-canvas-creator, choose a MindMap layout, create unique IDs, connect parent-child nodes, and prevent overlap.",
+      "expected_result_shape": "Valid JSON Canvas with top-level nodes and edges arrays, a central Launch Plan node, all requested branches, and valid edge references, returned or saved as a .canvas artifact.",
+      "fixture_data": "None"
+    }
+  ],
+  "negative_tests": [
+    {
+      "id": "negative-generic-image",
+      "prompt": "Generate a photorealistic hero image of a mountain cabin at sunrise.",
+      "expected_behavior": "Do not invoke any of the three diagram skills; use an image-generation capability if available or explain that this plugin creates structured diagrams rather than photorealistic images.",
+      "why_not_complete": "The request is image generation, not a Mermaid, Excalidraw, or Obsidian Canvas workflow."
+    },
+    {
+      "id": "negative-unspecified-canvas",
+      "prompt": "Make me a canvas for this.",
+      "expected_behavior": "Ask for the source content and whether the user means Obsidian Canvas or another canvas format before generating an artifact.",
+      "why_not_complete": "The input and requested file format are ambiguous, so generating a structure would require inventing content."
+    },
+    {
+      "id": "negative-unavailable-private-file",
+      "prompt": "Read my private Obsidian vault and convert the strategy note I wrote last month into a diagram.",
+      "expected_behavior": "Do not claim access to the private vault. Ask the user to attach the note or provide an accessible path in a host that exposes a writable workspace.",
+      "why_not_complete": "The plugin must not infer access to local or private files that were not provided by the host."
+    }
+  ]
+}

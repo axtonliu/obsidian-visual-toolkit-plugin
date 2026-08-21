@@ -1,0 +1,49 @@
+{
+  "name": "obsidian-visual-toolkit",
+  "version": "0.1.0",
+  "description": "Create Mermaid, Excalidraw, and Obsidian Canvas diagrams from text.",
+  "author": {
+    "name": "Axton Liu",
+    "email": "hey@axtonliu.com",
+    "url": "https://www.axtonliu.ai"
+  },
+  "homepage": "https://github.com/axtonliu/obsidian-visual-toolkit-plugin",
+  "repository": "https://github.com/axtonliu/obsidian-visual-toolkit-plugin",
+  "license": "MIT",
+  "keywords": [
+    "obsidian",
+    "mermaid",
+    "excalidraw",
+    "canvas",
+    "diagram",
+    "visualization"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Obsidian Visual Toolkit",
+    "shortDescription": "Turn text into Mermaid, Excalidraw, and Obsidian Canvas diagrams.",
+    "longDescription": "Create structured visual artifacts from notes, outlines, workflows, and technical explanations. Choose Mermaid for portable diagram code, Excalidraw for editable hand-drawn diagrams, or Obsidian Canvas for spatial knowledge maps.",
+    "developerName": "Axton Liu",
+    "category": "Productivity",
+    "capabilities": [
+      "Write"
+    ],
+    "websiteURL": "https://github.com/axtonliu/obsidian-visual-toolkit-plugin",
+    "privacyPolicyURL": "https://github.com/axtonliu/obsidian-visual-toolkit-plugin/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/axtonliu/obsidian-visual-toolkit-plugin/blob/main/TERMS.md",
+    "defaultPrompt": [
+      "Turn this workflow into a Mermaid diagram that renders in Obsidian and GitHub.",
+      "Create an editable Excalidraw flowchart from these steps.",
+      "Organize these notes as an Obsidian Canvas mind map.",
+      "Compare these two systems in a clear visual diagram."
+    ],
+    "brandColor": "#7C3AED",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
+    "screenshots": [
+      "./assets/mermaid-demo.png",
+      "./assets/excalidraw-demo.png",
+      "./assets/canvas-demo.png"
+    ]
+  }
+}
