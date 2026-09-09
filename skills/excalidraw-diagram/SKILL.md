@@ -15,11 +15,11 @@ Create Excalidraw diagrams from text content with multiple output formats.
 
 | 触发词 | 输出模式 | 文件格式 | 用途 |
 |--------|----------|----------|------|
-| `Obsidian Excalidraw`、`Excalidraw for Obsidian` | **Obsidian**（默认） | `.md` | 在 Obsidian 中直接打开 |
-| `标准Excalidraw`、`standard excalidraw` | **Standard** | `.excalidraw` | 在 excalidraw.com 打开/编辑/分享 |
+| `Obsidian Excalidraw`、`Excalidraw for Obsidian` | **Obsidian**（明确指定时） | `.md` | 在 Obsidian 中直接打开 |
+| `标准Excalidraw`、`standard excalidraw` | **Standard**（默认） | `.excalidraw` | 在 excalidraw.com 打开/编辑/分享 |
 | `Excalidraw动画`、`动画图`、`animate` | **Animated** | `.excalidraw` | 拖到 excalidraw-animate 生成动画 |
 
-如果用户只说 `Excalidraw` 而没有指定格式，优先使用 **Standard** 模式，因为它不依赖 Obsidian。只有用户明确提到 Obsidian 时才使用 Obsidian 模式。
+如果用户只说 `Excalidraw` 而没有指定格式，优先使用 **Standard** 模式，因为它不依赖 Obsidian。只有用户明确提到 Obsidian 时才使用 Obsidian 模式。编辑已有文件保留其格式，除非用户要求转换。
 
 ## Workflow
 
@@ -33,7 +33,7 @@ Create Excalidraw diagrams from text content with multiple output formats.
 
 ## Output Formats
 
-### Mode 1: Obsidian Format (Default)
+### Mode 1: Obsidian Format (when requested)
 
 **严格按照以下结构输出，不得有任何修改：**
 
@@ -398,8 +398,8 @@ See [references/excalidraw-schema.md](references/excalidraw-schema.md) for all e
 - 如果宿主不提供文件写入能力：返回完整、有效的 Markdown 或 JSON 内容，说明建议的文件名和扩展名。
 - 不得声称访问了未由宿主暴露的本地目录、Obsidian vault 或私人文件。
 
-#### 4. 确保 Markdown 结构完全正确
-**必须按以下格式生成**（不能有任何修改）：
+#### 4. 按模式交付
+Standard / Animated 只输出 Excalidraw JSON；仅 Obsidian 模式使用下面的 Markdown 包装：
 
 ```markdown
 ---
