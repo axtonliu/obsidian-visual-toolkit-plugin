@@ -1,0 +1,15 @@
+{
+  "name": "obsidian-visual-toolkit",
+  "displayName": "Obsidian Visual Toolkit",
+  "version": "0.1.1",
+  "description": "Turn notes and workflows into Mermaid diagrams, editable Excalidraw drawings, and Obsidian Canvas knowledge maps.",
+  "author": {
+    "name": "Axton Liu",
+    "email": "hey@axtonliu.com",
+    "url": "https://www.axtonliu.ai"
+  },
+  "homepage": "https://github.com/axtonliu/obsidian-visual-toolkit-plugin",
+  "repository": "https://github.com/axtonliu/obsidian-visual-toolkit-plugin",
+  "license": "MIT",
+  "keywords": ["obsidian", "mermaid", "excalidraw", "canvas", "diagrams", "visualization"]
+}

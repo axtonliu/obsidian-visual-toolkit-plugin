@@ -47,6 +47,12 @@ def load_json(path: Path) -> dict:
 
 def validate_manifest() -> None:
     manifest = load_json(MANIFEST_PATH)
+    claude_manifest = load_json(ROOT / ".claude-plugin" / "plugin.json")
+    for field in ("name", "version", "author", "license"):
+        if not claude_manifest.get(field) or claude_manifest[field] != manifest.get(field):
+            fail(f"Claude and Codex manifests must agree on {field!r}")
+    if not claude_manifest.get("description"):
+        fail("Claude manifest needs a description")
     for field in ("name", "version", "description", "skills"):
         if not manifest.get(field):
             fail(f"manifest field {field!r} is required")

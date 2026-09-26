@@ -1,6 +1,6 @@
 {
   "name": "obsidian-visual-toolkit",
-  "version": "0.1.0+codex.20260909212501",
+  "version": "0.1.1",
   "description": "Create Mermaid, Excalidraw, and Obsidian Canvas diagrams from text.",
   "author": {
     "name": "Axton Liu",

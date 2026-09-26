@@ -1,12 +1,14 @@
 # Obsidian Visual Toolkit
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Plugin: Skills only](https://img.shields.io/badge/OpenAI%20Plugin-Skills%20only-0369A1.svg)](.codex-plugin/plugin.json)
+[![Plugin: Skills only](https://img.shields.io/badge/Plugin-Skills%20only-0369A1.svg)](skills/)
 [![Status: Beta](https://img.shields.io/badge/Status-Beta-F59E0B.svg)](#status)
 
 **[中文文档](README_CN.md)**
 
-Turn text into Mermaid, Excalidraw, and Obsidian Canvas diagrams with one skills-only plugin for ChatGPT and Codex.
+Turn notes, outlines, and workflows into Mermaid diagrams, editable Excalidraw drawings, and Obsidian Canvas knowledge maps. The same three skills are packaged for Claude, Claude Code, ChatGPT, and Codex.
+
+Published by Axton Liu. This is an independent community project, not an official Obsidian, Excalidraw, Mermaid, Anthropic, or OpenAI product.
 
 ![Obsidian Visual Toolkit icon](assets/logo.png)
 
@@ -36,7 +38,7 @@ This project is in beta. The three workflows are usable and packaged for public 
 
 ## Requirements
 
-The core plugin is skills-only and does not require an account, API key, or MCP server.
+Use a host that supports skills or plugins; the host's account and plan requirements apply. The plugin needs no additional account, API key, MCP server, or package installation.
 
 Optional viewers and editors:
 
@@ -47,15 +49,39 @@ Optional viewers and editors:
 
 The plugin can return the artifact content directly. When the host provides a writable workspace, it may also save the requested file there.
 
+## Data and execution
+
+The installed skills read the content you supply and return diagram code or files. They do not connect to a server, collect analytics, or automatically upload content to a viewer. User-provided notes may contain personal data; processing and retention in the host follow that host's policies. Saved outputs remain in the workspace you choose. Opening an output in an optional online editor is your choice.
+
+The repository's Python scripts validate and package the plugin for maintainers. They use the Python standard library, read local plugin files, and write ZIP files to `dist/`; they do not run automatically when the skills are used.
+
 ## Installation
 
-### Public Plugins Directory
+### Claude: local installation and testing
+
+Clone this repository and build the Claude ZIP with Python 3:
+
+```bash
+python3 scripts/package_plugin.py --target claude
+```
+
+In Claude, open **Customize → Plugins → Add → Upload plugin**, then select `dist/obsidian-visual-toolkit-claude-0.1.1.zip`. Start a new conversation and ask for one of the three diagram formats.
+
+To test in Claude Code from the repository's parent folder:
+
+```bash
+claude --plugin-dir ./obsidian-visual-toolkit-plugin
+```
+
+The plugin is not yet listed in the Claude or OpenAI directories. Use the installation methods here until a listing is published.
+
+### OpenAI Plugins Directory
 
 After approval and publication, install **Obsidian Visual Toolkit** from the universal Plugins Directory shared by ChatGPT and Codex.
 
-### Repository marketplace testing
+### Codex repository marketplace testing
 
-After this repository is published, add it as a marketplace source:
+Add this repository as a marketplace source:
 
 ```bash
 codex plugin marketplace add axtonliu/obsidian-visual-toolkit-plugin --ref main
@@ -80,6 +106,8 @@ Compare a monolith and microservices architecture as a Mermaid diagram.
 
 ```text
 obsidian-visual-toolkit-plugin/
+├── .claude-plugin/
+│   └── plugin.json
 ├── .codex-plugin/
 │   └── plugin.json
 ├── assets/
@@ -102,10 +130,12 @@ obsidian-visual-toolkit-plugin/
 
 ```bash
 python3 scripts/validate_plugin.py
+claude plugin validate .
+python3 scripts/package_plugin.py --target claude
 python3 scripts/package_plugin.py
 ```
 
-The package script writes a submission-ready ZIP to `dist/` after validation succeeds.
+The package script writes a host-specific ZIP to `dist/` after validation succeeds. Claude directory submissions read the GitHub repository directly; its portal validation and review are separate from these local checks.
 
 ## Privacy and support
 
@@ -115,7 +145,7 @@ The package script writes a submission-ready ZIP to `dist/` after validation suc
 
 ## Acknowledgments
 
-This plugin packages and adapts the public skills from [axton-obsidian-visual-skills](https://github.com/axtonliu/axton-obsidian-visual-skills) for the OpenAI plugin format.
+This plugin packages and adapts the public skills from [axton-obsidian-visual-skills](https://github.com/axtonliu/axton-obsidian-visual-skills) for Claude and OpenAI plugin formats.
 
 ## License
 

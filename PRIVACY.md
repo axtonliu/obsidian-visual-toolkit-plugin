@@ -1,12 +1,12 @@
 # Privacy Policy
 
-Last updated: August 21, 2026
+Last updated: September 26, 2026
 
 Obsidian Visual Toolkit is a skills-only plugin published by Axton Liu.
 
 ## Data handling
 
-The plugin does not operate an external server and does not independently collect, transmit, sell, or store personal data. It processes the content you provide inside the ChatGPT or Codex host environment and returns diagram code or files as requested.
+The plugin does not operate an external server and does not independently collect, transmit, sell, or store personal data. It processes the content you provide inside the Claude, Claude Code, ChatGPT, or Codex host environment and returns diagram code or files as requested. That content may contain personal data if you include it in your notes or prompts. The publisher does not receive that content through the plugin and maintains no separate retention period or data store for it.
 
 When a host provides a writable workspace and you ask the plugin to save a file, the file remains in that workspace or location under your control.
 
@@ -16,7 +16,7 @@ The plugin may mention optional third-party viewers or editors, including Obsidi
 
 ## Host platform
 
-Your use of ChatGPT or Codex is governed by OpenAI's applicable privacy terms and data controls. This policy describes only the additional behavior of Obsidian Visual Toolkit.
+Your use of Claude or Claude Code is governed by Anthropic's applicable privacy terms and data controls. Your use of ChatGPT or Codex is governed by OpenAI's applicable privacy terms and data controls. This policy describes only the additional behavior of Obsidian Visual Toolkit.
 
 ## Contact
 
