@@ -9,6 +9,10 @@
     "url": "https://www.axtonliu.ai"
   },
   "homepage": "https://github.com/axtonliu/obsidian-visual-toolkit-plugin",
+  "privacyPolicyUrl": "https://github.com/axtonliu/obsidian-visual-toolkit-plugin/blob/main/PRIVACY.md",
+  "supportUrl": "https://github.com/axtonliu/obsidian-visual-toolkit-plugin/issues",
+  "documentationUrl": "https://github.com/axtonliu/obsidian-visual-toolkit-plugin/blob/main/README.md",
+  "termsOfServiceUrl": "https://github.com/axtonliu/obsidian-visual-toolkit-plugin/blob/main/TERMS.md",
   "repository": "https://github.com/axtonliu/obsidian-visual-toolkit-plugin",
   "license": "MIT",
   "keywords": ["obsidian", "mermaid", "excalidraw", "canvas", "diagrams", "visualization"]
